@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AVERAGE</title>
+</head>
+    <body>
+        <h2>TÍNH TRUNG BÌNH CỦA 3 MÔN TOÁN - LÝ - HÓA</h2>
+
+        <!-- Cách 1 dùng label + kết hợp alert       -->
+        <label>Nhập điểm môn Toán:</label>
+        <input type="text" id="Math"><br>
+        <label>Nhập điểm môn Lý:</label>
+        <input type="text" id="Phy" style="margin-top: 15px"><br>
+        <label>Nhập điểm môn Hóa:</label>
+        <input type="text" id="Che" style="margin-top: 15px"><br>
+
+        <button type="button" style="margin-top: 15px" onclick="ShowAvrg()">Tính trung bình</button>
+        <script>
+            function ShowAvrg() {
+                var math = parseFloat(document.getElementById("Math").value);
+                var phy = parseFloat(document.getElementById("Phy").value);
+                var che = parseFloat(document.getElementById("Che").value);
+
+                var avrg = (math + phy + che)/3;
+                alert("Điểm trung bình 3 môn của bạn: " + avrg);
+            }
+        </script>
+
+        <!--Cách 2 sử dụng promt để tạo thông báo nhập và alert show kết quả      -->
+
+    </body>
+</html>
