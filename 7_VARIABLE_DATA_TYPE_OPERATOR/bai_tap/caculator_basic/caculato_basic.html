@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT</title>
+</head>
+    <body>
+      <h2>CACULATOR</h2>
+
+      <input type="text" id="number1" placeholder="Nhập số thứ nhất">
+      <input type="text" id="number2" placeholder="Nhập số thứ hai" style="margin-left: 10px"><br>
+
+      <button type="button" style="margin-top: 10px;margin-left: 10px" onclick="showAdd()">Cộng (+)</button>
+      <button type="button" style="margin-left: 10px" onclick="showSubtraction()">Trừ (-)</button>
+      <button type="button" style="margin-left: 10px" onclick="showDivision()">Nhân (x)</button>
+      <button type="button" style="margin-left: 10px" onclick="showMultiplication()">Chia (/)</button>
+
+        <script>
+            function showAdd() {
+              var number1 = parseFloat( document.getElementById("number1").value);
+              var number2 = parseFloat(document.getElementById("number1").value);
+
+              var resultAdd = number1 + number2;
+              alert("Kết quả phép cộng là: " + resultAdd);
+            }
+
+            function showSubtraction() {
+              var number1 = parseFloat( document.getElementById("number1").value);
+              var number2 = parseFloat(document.getElementById("number1").value);
+
+              var resultSub = number1 - number2;
+              alert("Kết quả phép trừ là: " + resultSub);
+            }
+
+            function showDivision() {
+              var number1 = parseFloat( document.getElementById("number1").value);
+              var number2 = parseFloat(document.getElementById("number1").value);
+
+              var resultDiv = number1 * number2;
+              alert("Kết quả chia cộng là: " + resultDiv);
+            }
+
+            function showMultiplication() {
+              var number1 = parseFloat( document.getElementById("number1").value);
+              var number2 = parseFloat(document.getElementById("number1").value);
+
+              var resultMul = number1 / number2;
+              alert("Kết quả nhân cộng là: " + resultMul);
+            }
+
+        </script>
+  </body>
+</html>
