@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT1</title>
+</head>
+<body>
+<h2>TÍNH ĐIỂM TỔNG VÀ ĐIỂM TRUNG BÌNH CỦA 3 MÔN TOÁN - LÝ - HÓA</h2>
+
+<!-- Cách 1 dùng label + kết hợp alert       -->
+    <label> Nhập điểm Toán:</label>
+    <input type="text" id="math" style="margin-top: 10px"><br>
+    <label> Nhập điểm Lý:</label>
+    <input type="text" id="physics" style="margin-top: 10px; margin-left: 10px"><br>
+    <label> Nhập điểm Hóa:</label>
+    <input type="text" id="chemistry" style="margin-top: 10px"><br>
+
+    <button type="button" style="margin-top: 20px" onclick="showAvrg()">Tính trung bình</button>
+
+    <script>
+        function showAvrg() {
+            var math = parseFloat(document.getElementById("math").value);
+            var physics = parseFloat(document.getElementById("physics").value);
+            var chemistry = parseFloat(document.getElementById("chemistry").value);
+
+            var tongDiem = (math + physics + chemistry);
+            var avrg = (math + physics + chemistry) / 3;
+
+            alert("Tổng điểm của bạn là: " + tongDiem + "\nĐiểm trung bình 3 môn là: " + avrg);
+      }
+    </script>
+</body>
+</html>

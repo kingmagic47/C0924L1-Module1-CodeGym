@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT4</title>
+</head>
+<body>
+    <h2>DIỆN TÍCH HÌNH TRÒN</h2>
+
+        <label> Nhập bán kính:</label>
+        <input type="text" id="radius" style="margin-top: 10px"><br>
+
+        <button type="button" onclick="chuviHinhtron()" style="margin-top: 20px">Tính chu vi hình tròn</button>
+
+    <script>
+        function chuviHinhtron() {
+          const pi = 3.1415;
+          var radius = parseFloat(document.getElementById("radius").value);
+
+          var chuviCir = (radius * 2) * pi;
+          alert("Diện tích hình tròn là: " +chuviCir);
+        }
+    </script>
+</body>
+</html>

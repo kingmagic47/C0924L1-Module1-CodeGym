@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT2 - </title>
+</head>
+<body>
+    <h2>CHUYỂN ĐỔI NHIỆT ĐỘ</h2>
+
+    <input type="text" id="temperature" placeholder="Độ C (Celsius)">
+    <button type="button" onclick="convertTemp()">Convert</button>
+
+    <script>
+        function convertTemp() {
+          var tempC = parseFloat(document.getElementById("temperature").value);
+
+          var tempF = (tempC * 9 / 5) + 32;
+          alert("Kêt quả đổi ra độ F: " +tempF);
+        }
+    </script>
+</body>
+</html>
