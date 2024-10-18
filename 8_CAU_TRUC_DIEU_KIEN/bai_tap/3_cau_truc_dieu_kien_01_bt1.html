@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT1</title>
+</head>
+<body>
+    <h2>KIỂM TRA CHIA HẾT</h2>
+
+    <label>Nhập a</label>
+    <input type="text" id="a"><br>
+    <label>Nhập b</label>
+    <input type="text" id="b" style="margin-top: 10px"><br>
+    <button type="button" onclick="showResult()" style="margin-top: 10px">Kiểm tra</button>
+    <p id="result"></p>
+
+    <script>
+        function showResult() {
+            let _a = parseFloat(document.getElementById("a").value);
+            let _b = parseFloat(document.getElementById("b").value);
+            let result = document.getElementById("result");
+
+            if(_a % _b == 0){
+                result.innerText = "a chia hết cho b";
+            }else {
+                result.innerText = "a không chia hết cho b";
+            }
+        }
+    </script>
+</body>
+</html>

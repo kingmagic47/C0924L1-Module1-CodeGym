@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT2</title>
+</head>
+<body>
+    <h2>KIỂM TRA HỌC SINH ĐỦ TUỔI HỌC LỚP 10</h2>
+
+    <label>Nhập tuổi:</label>
+    <input type="text" id="age" placeholder="Nhập tuổi"><br>
+    <button type="button" onclick="showResult()" style="margin-top: 10px">Kiểm tra</button>
+    <p id="result"></p>
+
+    <script>
+        function showResult() {
+            let _a = parseFloat(document.getElementById("age").value);
+            let result = document.getElementById("result");
+
+            if(_a >= 15 ){
+                result.innerText = "Bạn đủ tuổi học lớp 10";
+            }else {
+                result.innerText = "Bạn chưa đủ tuổi học lớp 10";
+            }
+        }
+    </script>
+</body>
+</html>
