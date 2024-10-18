@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT7</title>
+</head>
+<body>
+    <!--cước phí hàng tháng = phí thuê bao cố định + (Số phút gọi nội địa x Đơn giá nội địa)
+                                + (Số phút gọi quốc tế x đơn giá quốc tế) + các phí dịch vụ khác-->
+    <!--Giả sử một gia đình có các thông số như sau:-->
+    <!--Phí thuê bao hàng tháng: 50.000 VND-->
+    <!--Số phút gọi nội địa: 100 phút với đơn giá là 500 VND/phút-->
+    <!--Số phút gọi quốc tế: 20 phút với đơn giá là 2.000 VND/phút-->
+    <!--Không có phí dịch vụ khác-->
+
+    <h2>TÍNH CƯỚC THUÊ BAO CỐ ĐỊNH</h2>
+
+    <label>Nhập cước thuê bao hàng tháng (vnd): </label>
+    <input type="text" id="moneyMonth" style="margin-top: 10px" placeholder="Nhập cước thuê bao tháng"><br>
+    <label>Nhập số phút gọi nội địa (phút): </label>
+    <input type="text" id="minInland" style="margin-top: 10px" placeholder="Nhập số phút gọi nội địa"><br>
+    <label>Nhập số phút gọi quốc tế (phút): </label>
+    <input type="text" id="minInter" style="margin-top: 10px" placeholder="Nhập số phút gọi quốc tế"><br>
+
+    <button type="button" onclick="showResult()" style="margin-top: 10px">Tính giá cước</button>
+    <p id="result"></p>
+
+    <script>
+        function showResult() {
+            let moneyMonth = parseFloat(document.getElementById("moneyMonth").value);
+            let minInland = parseFloat(document.getElementById("minInland").value);
+            let minInter = parseFloat(document.getElementById("minInter").value);
+            let result = document.getElementById("result");
+            let moneyAll;
+
+            if(minInland <= 100 && minInter <= 20){
+                moneyAll = moneyMonth + (minInland * 500) + (minInter * 2000);
+                result.innerText = "Cước phí của bạn là: " + moneyAll;
+            }else {
+                moneyAll = moneyMonth + (minInland * 1000) + (minInter * 4000);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -5,34 +5,34 @@
     <title>BT5</title>
 </head>
 <body>
-    <h2>KIỂM TRA HỌC LỰC CỦA HỌC SINH</h2>
+        <h2>KIỂM TRA HỌC LỰC CỦA HỌC SINH</h2>
 
-    <label>Nhập điểm trung bình các bài kiểm tra: </label>
-    <input type="text" id="scoretb" placeholder="Nhập điểm"><br>
-    <label>Nhập điểm thi giữa kỳ: </label>
-    <input type="text" id="scoremid" style="margin-top: 10px" placeholder="Nhập điểm"><br>
-    <label>Nhập điểm thi cuối kỳ</label>
-    <input type="text" id="scoreend" style="margin-top: 10px" placeholder="Nhập điểm"><br>
-    <button type="button" onclick="showResult()" style="margin-top: 10px">Kiểm tra</button>
-    <p id="result"></p>
+        <label>Nhập điểm trung bình các bài kiểm tra: </label>
+        <input type="text" id="scoretb" placeholder="Nhập điểm"><br>
+        <label>Nhập điểm thi giữa kỳ: </label>
+        <input type="text" id="scoremid" style="margin-top: 10px" placeholder="Nhập điểm"><br>
+        <label>Nhập điểm thi cuối kỳ</label>
+        <input type="text" id="scoreend" style="margin-top: 10px" placeholder="Nhập điểm"><br>
+        <button type="button" onclick="showResult()" style="margin-top: 10px">Kiểm tra</button>
+        <p id="result"></p>
 
-    <script>
-      function showResult() {
-        let scoretb = parseFloat(document.getElementById("scoretb").value);
-        let scoremid = parseFloat(document.getElementById("scoremid").value);
-        let scoreend = parseFloat(document.getElementById("scoreend").value);
-        let result = document.getElementById("result");
+        <script>
+            function showResult() {
+                let scoretb = parseFloat(document.getElementById("scoretb").value);
+                let scoremid = parseFloat(document.getElementById("scoremid").value);
+                let scoreend = parseFloat(document.getElementById("scoreend").value);
+                let result = document.getElementById("result");
 
-        let resultAll = (scoretb + scoremid + scoreend) / 3;
+                let resultAll = (scoretb + scoremid + scoreend) / 3;
 
-        if(resultAll > 8){
-          result.innerText = " Bạn là có học lực giỏi";
-        }else if(resultAll >= 5) {
-          result.innerText = " Bạn là có học lực khá";
-        }else {
-          result.innerText = " Bạn là có học lực trung bình";
-        }
-      }
-    </script>
+                if(resultAll > 8){
+                    result.innerText = " Bạn là có học lực giỏi";
+                }else if(resultAll >= 5) {
+                    result.innerText = " Bạn là có học lực khá";
+                }else {
+                    result.innerText = " Bạn là có học lực trung bình";
+                }
+            }
+        </script>
 </body>
 </html>

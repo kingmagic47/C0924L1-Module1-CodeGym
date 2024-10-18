@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT6</title>
+</head>
+<body>
+      <h2>TÍNH HOA HỒNG BÁN HÀNG</h2>
+
+      <label>Nhập tổng doanh thu: </label>
+      <input type="text" id="sale" placeholder="Nhập tổng doanh thu"><br>
+      <button type="button" onclick="showResult()" style="margin-top: 10px">Tính % hoa hồng</button>
+      <p id="result"></p>
+
+      <script>
+        function showResult() {
+          let sale = parseFloat(document.getElementById("sale").value);
+          let result = document.getElementById("result");
+          const percent = 0.08;
+
+          //% hoa hồng đuợc tính là: 8%
+          let resultPercent = sale * percent;
+
+          result.innerText = "Số hoa hồng nhận được là: " + resultPercent;
+        }
+      </script>
+</body>
+</html>
