@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT 2</title>
+</head>
+<body>
+    <h2>SWITCH-CASE</h2>
+    <h2>TÍNH SỐ NGÀY TRONG THÁNG</h2>
+
+    <input type="text" id="day" placeholder="Nhập tháng">
+    <button type="button" onclick="showDayinmont()">Tính số ngày</button>
+    <p id="result"></p>
+
+<!--    <input type="text" id="day2" placeholder="Nhập tháng">-->
+<!--    <button type="button" onclick="showDayinmont()">Tính số ngày</button>-->
+<!--    <p id="result2"></p>-->
+
+    <script>
+      function showDayinmont() {
+        let _day = parseFloat(document.getElementById("day").value);
+        let result = document.getElementById("result");
+        let dayInmonth;
+        switch (_day) {
+          case 1:
+          case 3:
+          case 5:
+          case 7:
+          case 8:
+          case 10:
+          case 12:
+            dayInmonth = "31";
+            result.innerText = "Tháng " +_day+ " có " + dayInmonth + " ngày";
+            break;
+          case 2:
+            result.innerText = "Tháng " +_day+ " có 28 hoặc 29 ngày";
+            break;
+          case 4:
+          case 6:
+          case 9:
+          case 11:
+            dayInmonth = "30";
+            result.innerText = "Tháng " +_day+ " có " + dayInmonth + " ngày";
+            break;
+          default:
+            result.innerText = _day + " không phải một tháng trong năm";
+        }
+      }
+    </script>
+</body>
+</html>
