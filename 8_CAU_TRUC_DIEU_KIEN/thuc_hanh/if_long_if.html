@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <label> Nhập a:</label>
+    <input type="text" id="a" style="margin-top: 10px"><br>
+    <label> Nhập b:</label>
+    <input type="text" id="b" style="margin-top: 10px; margin-left: 10px"><br>
+    <label> Nhập c:</label>
+    <input type="text" id="c" style="margin-top: 10px"><br>
+
+    <button type="button" style="margin-top: 20px" onclick="maxNumber()">Max number</button>
+
+    <script>
+
+      function maxNumber() {
+        var a = parseFloat( document.getElementById("a").value);
+        var b = parseFloat(document.getElementById("b").value);
+        var c = parseFloat(document.getElementById("c").value);
+        if(a > b){
+            if(a > c){
+              alert("Max number:" +a);
+            }else {
+              alert("Max number: " +c);
+            }
+        }else if(b > c){
+          alert("Max number: " +b);
+        }else {
+          alert("Max number: " +c);
+        }
+      }
+    </script>
+
+
+</body>
+</html>
