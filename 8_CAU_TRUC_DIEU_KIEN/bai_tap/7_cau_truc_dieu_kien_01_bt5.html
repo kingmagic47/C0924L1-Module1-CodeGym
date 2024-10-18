@@ -18,12 +18,12 @@
 
         <script>
             function showResult() {
-                let scoretb = parseFloat(document.getElementById("scoretb").value);
-                let scoremid = parseFloat(document.getElementById("scoremid").value);
-                let scoreend = parseFloat(document.getElementById("scoreend").value);
+                let scoreTb = parseFloat(document.getElementById("scoretb").value);
+                let scoreMid = parseFloat(document.getElementById("scoremid").value);
+                let scoreEnd = parseFloat(document.getElementById("scoreend").value);
                 let result = document.getElementById("result");
 
-                let resultAll = (scoretb + scoremid + scoreend) / 3;
+                let resultAll = (scoreTb + scoreMid + scoreEnd) / 3;
 
                 if(resultAll > 8){
                     result.innerText = " Bạn là có học lực giỏi";
