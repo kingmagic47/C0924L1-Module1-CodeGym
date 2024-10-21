@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT7</title>
+</head>
+<body>
+    <h2>PHƯƠNG TRÌNH BẬC 2</h2>
+
+    <label>Nhập số a: </label>
+    <input type="text" id="a" style="margin-top: 10px" placeholder="Nhập số a"><br>
+    <label>Nhập số b: </label>
+    <input type="text" id="b" style="margin-top: 10px" placeholder="Nhập số b"><br>
+    <label>Nhập số c: </label>
+    <input type="text" id="c" style="margin-top: 10px" placeholder="Nhập số c"><br>
+
+    <button type="button" onclick="showResult()" style="margin-top: 10px">Tính phương trình</button>
+    <p id="result"></p>
+
+    <script>
+        function showResult() {
+            let a = parseFloat(document.getElementById("a").value);
+            let b = parseFloat(document.getElementById("b").value);
+            let c = parseFloat(document.getElementById("c").value);
+            let x1, x2;
+            let s = (b * b) - (4 * a * c);
+            let result = document.getElementById("result");
+
+            if(s < 0){
+                result.innerText = "Phương trình bậc 2 vô nghiệm";
+            }else if(s == 0){
+                x1 = - (b / (2 * a));
+                result.innerText = "Phương trình có nghiệm kép x1 = x2 = " + x1;
+            }else {
+                x1 = ((-b) + Math.sqrt(s)) / (2*a);
+                x2 = ((-b) - Math.sqrt(s)) / (2*a);
+                result.innerText = "Phương trình có nghiệm x1 = " + x1 + "\nPhương trình có nghiệm x2 = " + x2;
+            }
+
+        }
+    </script>
+</body>
+</html>
