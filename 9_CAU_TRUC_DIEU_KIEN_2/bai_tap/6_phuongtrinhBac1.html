@@ -4,7 +4,36 @@
     <meta charset="UTF-8">
     <title>BT6</title>
 </head>
-<body>
+        <body>
+        <h2>PHƯƠNG TRÌNH BẬC 1</h2>
 
+        <h4>Phương trình bậc nhất: ax + b = 0 </h4>
+        <label>Nhập số a: </label>
+        <input type="text" id="a" style="margin-top: 10px" placeholder="Nhập số a"><br>
+        <label>Nhập số b: </label>
+        <input type="text" id="b" style="margin-top: 10px" placeholder="Nhập số b"><br>
+
+        <button type="button" onclick="showResult()" style="margin-top: 10px">Tính phương trình</button>
+        <p id="result"></p>
+
+        <script>
+            function showResult() {
+                let a = parseFloat(document.getElementById("a").value);
+                let b = parseFloat(document.getElementById("b").value);
+                let x;
+                let result = document.getElementById("result");
+
+                if(a == 0){
+                    if(b !== 0){
+                        result.innerText = "Nghiệm đúng với mọi x";
+                    }else {
+                        result.innerText = "Vô nghiệm";
+                    }
+                }else {
+                    x = - (b / a);
+                    result.innerText = "Kết quả: " + x;
+                }
+            }
+</script>
 </body>
 </html>
