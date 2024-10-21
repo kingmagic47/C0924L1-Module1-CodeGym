@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT10</title>
+</head>
+<body>
+<!--Tiền điện bậc Y = Số số điện áp dụng giá điện bậc Y x Giá điện bán lẻ bậc Y-->
+
+<!--Chẳng hạn: Tháng này gia đình bạn sử dụng hết 200 số điện thì 50 số điện đầu sẽ được tính với mức giá 1.678 đồng/số,
+50 số điện tiếp theo sẽ được tính với mức giá 1.734 đồng/số và 100 số điện còn lại sẽ được tính với mức giá 2.014 đồng/số.-->
+
+<!--Tiền điện bậc 1 (50 số) = 50 x 1.678 = 83.900 đồng-->
+<!--Tiền điện bậc 2 (50 số) = 50 x 1.734 = 86.700 đồng-->
+<!--Tiền điện bậc 3 (100 số) = 100 x 2.014 = 201.400 đồng-->
+<!--Tổng tiền điện = (Tiền điện bậc 1 + Tiền điện bậc 2 + Tiền điện bậc 3) x 10% VAT (thuế GTGT)
+                   = (83.900 + 86.700 + 201.400) x 10%  = 372.000 x 10% = 409.200 đồng.-->
+
+      <h2>TÍNH GIÁ ĐIỆN</h2>
+
+      <label>Nhập số điện: </label>
+      <input type="text" id="electric" style="margin-top: 10px" placeholder="Nhập số điện"><br>
+
+      <button type="button" onclick="showResult()" style="margin-top: 10px">Tính tiền điện</button>
+      <p id="result"></p>
+
+      <script>
+        function showResult() {
+          let a = parseFloat(document.getElementById("electric").value);
+          const price1 = 1678;
+          const price2 = 1734;
+          const price3 = 2014;
+          const vat = 0.1;
+
+          let priceAll;
+          let priceAllVat
+          let result = document.getElementById("result");
+
+          if(a <= 50){
+            priceAll = a * 1678;
+           // result.innerText = "Tổng tiền điện: " + priceAll;
+          }else if(a > 50 && a <=100){
+            priceAll = (price1 * 50) + ((a - 50) *price2);
+            //result.innerText = "Tổng tiền điện: " + priceAll;
+          }else {
+            priceAll = (price1 * 50) + (price2 * 50) + ((a - 100)* price3);
+            //result.innerText = "Tổng tiền điện: " + priceAll;
+          }
+
+          priceAllVat = priceAll + (priceAll * 0.1);
+          result.innerText = "Tổng tiền điện: " + priceAllVat;
+        }
+      </script>
+</body>
+</html>

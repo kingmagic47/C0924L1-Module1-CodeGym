@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT8</title>
+</head>
+<body>
+        <h2>KIỂM TRA SỐ NHẬP VÀO CÓ PHẢI LÀ TUỔI MỘT NGƯỜI</h2>
+
+        <label>Nhập số số nguyên: </label>
+        <input type="text" id="number" style="margin-top: 10px" placeholder="Nhập số a"><br>
+
+        <button type="button" onclick="showResult()" style="margin-top: 10px">Kiểm tra</button>
+        <p id="result"></p>
+
+        <script>
+            function showResult() {
+                let number = parseFloat(document.getElementById("number").value);
+                let result = document.getElementById("result");
+
+                if(0 < number && number <= 120){
+                    result.innerText = "Số nguyên: " + number + " là tuổi";
+                }else {
+                    result.innerText = "Số nguyên: " + number + " không phải là tuổi";
+                }
+            }
+        </script>
+</body>
+</html>
