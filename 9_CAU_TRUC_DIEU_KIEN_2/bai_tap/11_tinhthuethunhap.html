@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT11</title>
+</head>
+<body>
+<!--Bà A ký hợp đồng lao động không thời hạn với công ty cổ phần B có thu nhập từ tiền lương,
+        tiền công trong tháng 01/2023 như sau:-->
+<!--Lương thực tế: 30 triệu-->
+<!--Đóng bảo hiểm (BHXH 8%, BHYT 1,5%, BHTN 1%) trên mức lương 20 triệu-->
+<!--Bà A không có người phụ thuộc-->
+<!--Thuế thu nhập cá nhân của bà A trong tháng 01/2023 được tính như sau:-->
+<!--Thu nhập chịu thuế = 30 triệu (không có các khoản thu nhập được miễn thuế)-->
+<!--Bà A được giảm trừ gia cảnh cho bản thân: 11 triệu-->
+<!--Bà đóng bảo hiểm bắt buộc = 20 triệu x (8% + 1,5% + 1%) = 2,1 triệu-->
+<!--Tổng các khoản giảm trừ = 11 triệu + 2,1 triệu = 13,1 triệu-->
+<!--Thu nhập tính thuế = 30 triệu – 13,1 triệu = 16,9 triệu-->
+<!--Như vậy, thu nhập tính thuế của bà A thuộc bậc 3 của Biểu tính thuế rút gọn nên:-->
+<!--Bậc 1: 0 triệu đồng + 5% TNTT -> Đến 5 triệu đồng (triệu đồng)-->
+<!--Bậc 2: 0,25 triệu đồng + 10% TNTT trên 5 triệu đồng -> Trên 5 triệu đồng đến 10 triệu đồng-->
+<!--Bâc 3: 0,75 triệu đồng + 15% TNTT trên 10 triệu đồng -> Trên 10 triệu đồng đến 18 triệu đồng-->
+<!--Thuế thu nhập cá nhân = 0,75 triệu + [15% x (16,9 triệu – 10 triệu)] = 1,785 triệu đồng-->
+<!--Hoặc Thuế thu nhập cá nhân = 15% x 16,9 triệu – 0,75 triệu = 1,785 triệu đồng.-->
+<!--Vậy tháng 01/2023 bà A phải đóng thuế thu nhập cá nhân đối với thu nhập từ tiền lương, tiền công
+        là 1.785.000 đồng.-->
+
+
+        <h2>TÍNH THUẾ THU NHẬP CÁ NHÂN</h2>
+
+        <label>Nhập số tiền lương thực tế: </label>
+        <input type="text" id="money" style="margin-top: 10px" placeholder="Nhập số tiền"><br>
+
+        <button type="button" onclick="showResult()" style="margin-top: 10px">Tính thuế thu nhập</button>
+        <p id="result"></p>
+
+        <script>
+            function showResult() {
+                let moneyReal = parseFloat(document.getElementById("money").value);
+                const moneyInsurance = 20000000 * (0.08 + 0.015 + 0.01); // Bảo hiểm bắt buộc với mức lương trên 20 tr
+                const moneyRelative = 11000000; //Giảm trừ gia cảnh người thân
+                const tax1 = 0.05; // thuế suất 5%
+                const tax2 = 0.01; // thuế suất 10%
+                const tax3 = 0.15; // thuế suất 15%
+                let moneyTax;
+                let personalTax;
+                let result = document.getElementById("result");
+
+                moneyTax = moneyReal - moneyInsurance - moneyRelative; //Thu nhập tính thuế
+
+                if(moneyTax > 0 && moneyTax <= 5000000){
+                    personalTax = tax1 * moneyTax; //Thuế suất 5%
+                    result.innerText = "Thuế thu nhập cá nhân : " + personalTax + " vnd."
+                }else if(moneyTax > 5000000 && moneyTax <= 10000000){
+                    personalTax = (tax2 * moneyTax) - 250000; //Thuế suất 10%
+                    result.innerText = "Thuế thu nhập cá nhân : " + personalTax + " vnd."
+                }else {
+                    personalTax = (tax3 * moneyTax) - 750000; //Thuế suất 15%
+                    result.innerText = "Thuế thu nhập cá nhân : " + personalTax + " vnd."
+                }
+            }
+        </script>
+</body>
+</html>
