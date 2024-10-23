@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT2</title>
+</head>
+<body>
+<!--Bài 2: Sử dụng hàm prompt() để lấy thông tin nhiệt độ hiện tại được nhập bởi người truy cập. -->
+<!--Nếu nhiệt độ nhập vào trên 100, yêu cầu người dùng giảm nhiệt độ.-->
+<!--Nếu nhiệt độ dưới 20, yêu cầu người dùng tăng nhiệt độ.-->
+
+      <button type="button" onclick="doLoop()" style="margin-top: 10px">Thực thi vòng lặp</button>
+<!--      <p id="result"></p>-->
+
+      <script>
+        function doLoop() {
+          let temp;
+          while (temp !== ''){
+            temp = parseFloat(prompt("Nhập thông tin nhiệt độ có giá trị < 20 và > 100 " +
+                                    " \n Nếu nhập giá trị rỗng out chương trình"));
+            if(temp < 20){
+              alert("Tăng nhiệt độ");
+            }else if(temp > 100){
+              alert("Giảm nhiệt độ");
+            }
+          }
+        }
+      </script>
+</body>
+</html>
