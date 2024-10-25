@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT3</title>
+</head>
+<body>
+<!--Bài 3: In tam giác vuông. Các góc vuông nằm ở các vị trí khác nhau-->
+
+  <button type="button" onclick="doLoop()" style="margin-top: 10px">In hình tam giác vuông</button>
+  <p id="result"></p>
+
+<script>
+  function doLoop() {
+    let result = document.getElementById("result");
+
+    //In hình tam giác thứ 1
+    for (let i = 0; i < 5; i++) {
+      for (let j = 0; j <= i; j++) {
+        result.innerText = result.innerText + "*";
+      }
+      result.innerText = result.innerText + "\n";
+    }
+
+    // //In hình tam giác thứ 2
+    // for (let i2 = 0; i2 < 5; i2--) {
+    //   for (let j2 = 0; j2 <= i2; j2--) {
+    //     result.innerText = result.innerText + "*";
+    //   }
+    //   result.innerText = result.innerText + "\n";
+    // }
+
+
+
+
+  }
+</script>
+</body>
+</html>

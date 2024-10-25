@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT2</title>
+</head>
+<body>
+<!--Bài 2: Tính giai thừa của một số nguyên dương-->
+
+    <button type="button" onclick="doLoop()" style="margin-top: 10px">Tính giai thừa</button>
+    <p id="result"></p>
+
+<script>
+    function doLoop() {
+        let result = document.getElementById("result");
+        let n = Number(prompt("Nhập vào 1 số nguyên dương"));
+        let s = 1;
+
+        if(n == 0){
+            result.innerText = "Giai thừa của " + n + "!" + " là: 1";
+        }
+
+        for (let i = 1; i <= n; i++) {
+                s = s * i;
+        }
+        result.innerText = "Giai thừa của " + n + "!" + " là: " + s;
+
+    }
+</script>
+</body>
+</html>

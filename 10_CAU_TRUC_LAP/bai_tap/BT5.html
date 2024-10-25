@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT5</title>
+</head>
+<body>
+<!--Bài 5: Tính tổng của 20 số đầu tiên trong dãy fibonacci.-->
+
+    <button type="button" onclick="doLoop()" style="margin-top: 10px">Thực thi vòng lặp</button>
+<!--    <p id="result"></p>-->
+
+  <script>
+    function doLoop(){
+      let fiboSum;
+      let fibo0 = 0;
+      let fibo1 = 1;
+      let count = 0;
+      let sumFibo;
+
+      while (count < 20){
+        //document.write(fibo0 + "<br>");
+        fiboSum = fibo0 + fibo1;
+        fibo0 = fibo1;
+        fibo1 = fiboSum;
+
+        count++;
+      }
+      //sumFibo = fiboSum;
+      sumFibo = sumFibo + fiboSum;
+      document.write(sumFibo);
+    }
+  </script>
+</body>
+</html>

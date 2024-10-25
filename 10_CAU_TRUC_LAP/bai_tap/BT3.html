@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT3</title>
+</head>
+<body>
+<!--Bài 3: Hiển thị ra 20 số trong dãy fibonacci đầu tiên.-->
+        <button type="button" onclick="doLoop()" style="margin-top: 10px">Thực thi vòng lặp</button>
+        <p id="result"></p>
+
+        <script>
+            function doLoop() {
+                let result = document.getElementById("result");
+                //Dùng vòng lặp for
+                 let fiboSum;
+                 let fibo0 = 0;
+                 let fibo1 = 1;
+                for (let i = 0; i < 20; i++) {
+                    if(i === 0){
+                        fiboSum = fibo0;
+                    }else if(i === 1){
+                        fiboSum = fibo1;
+                    }else {
+                        fiboSum = fibo0 + fibo1;
+                        fibo0 = fibo1;
+                        fibo1 = fiboSum;
+                    }
+                    result.innerText = result.innerText + fiboSum + "\n";
+                }
+
+                //Dùng vòng lặp while
+                // let count = 0;
+                // while (count < 20){
+                //     //result.innerText = result.innerText + fibo0 + "\n";
+                //     document.write(fibo0 + "\n");
+                //     fiboSum = fibo0 + fibo1;
+                //     fibo0 = fibo1;
+                //     fibo1 = fiboSum;
+                //
+                //     count++;
+                // }
+            }
+        </script>
+</body>
+</html>

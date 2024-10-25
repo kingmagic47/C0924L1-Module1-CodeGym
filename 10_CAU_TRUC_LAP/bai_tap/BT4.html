@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT4</title>
+</head>
+<body>
+<!--Bài 4: Tìm số đầu tiên trong dãy fibonacci chia hết cho 5.-->
+<button type="button" onclick="doLoop()" style="margin-top: 10px">Thực thi vòng lặp</button>
+<p id="result"></p>
+<script>
+    function doLoop() {
+        let result = document.getElementById("result");
+        let fiboSum;
+        let fibo0 = 0;
+        let fibo1 = 1;
+
+        /*Dùng vòng lặp while*/
+        // let count = 0;
+        // while (count < 20){
+        // if (fiboSum % 5 == 0) {
+        //         result.innerText = result.innerText + "Số đâu tiên trong dãy Fibonacci chia hết cho 5: "+ fiboSum + "\n";
+        //         break;
+        //     }
+        //     fiboSum = fibo0 + fibo1;
+        //     fibo0 = fibo1;
+        //     fibo1 = fiboSum;
+        //
+        //     count++;
+        // }
+
+        /*Dùng do-while*/
+        do {
+            fiboSum = fibo0 + fibo1;
+            fibo0 = fibo1;
+            fibo1 = fiboSum;
+
+        } while (fibo1 % 5 !== 0);
+        result.innerText = result.innerText + "Số đâu tiên trong dãy Fibonacci chia hết cho 5: " + fibo1 + "\n";
+
+    }
+</script>
+</body>
+</html>
