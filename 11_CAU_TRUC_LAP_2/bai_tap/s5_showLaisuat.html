@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT5</title>
+</head>
+<body>
+<!--Bài 5: Viết chương trình tính lãi ngân hàng (lãi mẹ đẻ lại con) khi biết số tiền ban đầu, -->
+<!--số tháng cho vay và lãi xuất hàng tháng.-->
+<!--Để tính lãi ngân hàng theo kiểu "lãi mẹ đẻ lãi con" (còn gọi là lãi kép), công thức sẽ là:-->
+<!--A=P×(1+r)^n-->
+<!--A là số tiền cuối cùng (bao gồm cả gốc và lãi).-->
+<!--P là số tiền ban đầu.-->
+<!--r là lãi suất hàng tháng (tính theo số thập phân, ví dụ 1% = 0.01).-->
+<!--n là số tháng cho vay.-->
+<!--VD: Giả sử bạn gửi vào ngân hàng 10,000,000 đồng với lãi suất hàng tháng 0.5% trong 12 tháng. Ta có:-->
+<!--P=10,000,000-->
+<!--r=0.005 (0.5% = 0.5/100 = 0.005)-->
+<!--n=12-->
+<!--Áp dụng vào công thức:-->
+<!--A =10,000,000×(1+0.005)^12-->
+<!--A=10,000,000×(1.005) ^12 ≈10,000,000×1.061677≈10,616,770 đồng-->
+<!--Vậy, sau 12 tháng, số tiền bạn nhận được sẽ là 10,616,770 đồng.-->
+
+<button type="button" onclick="doLoop()">Tính lãi</button>
+<p id="result"></p>
+  <script>
+      function doLoop() {
+        let moneyFirst; //Số tiền ban đầu
+        let moneyFinal; //Số tiền cuối
+        let interest; //tỷ lệ
+        let interestPercen; //Nhập lãi = % Vd: 5% -> nhập 5
+        let month;  //Số tháng
+
+        moneyFirst = Number(prompt("Nhập số tiền ban đầu gửi:"));
+        month = Number(prompt("Nhập số tháng"));
+        interestPercen = parseFloat(prompt("Nhập % lãi suất"));
+
+        //Kiểm tra tháng không nhập số âm -> tháng
+        while (month < 0){
+          alert("Nhập lại tháng");
+          month = Number(prompt("Nhập số tháng"));
+        }
+
+        //Kiểm tra không nhập số âm -> %
+        while (interestPercen < 0){
+          alert("Nhập lại % lãi suất");
+          interestPercen = parseFloat(prompt("Nhập % lãi suất"));
+        }
+
+        //Tính tỷ lệ % lãi suất
+        interest = interestPercen / 100;
+
+        //Dùng for để tính lũy thừa tháng
+        let interestM = 1;
+        for (let i = 1; i <= month ; i++) {
+           interestM = interestM * (1 + interest);
+        }
+
+        moneyFinal = (moneyFirst * interestM);
+        //moneyFinal = moneyFirst * ((1 + interest)**month); //toán tử ** -> số mũ hoặc dùng Math.pow()
+
+        document.write("Tổng số tiền bạn nhận được khi gửi " + month + " là: " + moneyFinal);
+
+      }
+  </script>
+</body>
+</html>

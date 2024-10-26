@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT4</title>
+</head>
+<body>
+<!--Bài 4: In hình chữ nhật-->
+
+  <button type="button" onclick="doLoop()" style="margin-top: 10px">In hình chữ nhật</button>
+  <p id="result"></p>
+
+  <script>
+    function doLoop(){
+      for (let i = 0; i < 7; i++) {     //Chiều rộng HCM tính là 7 star
+        for (let j = 0; j < 21; j++) {      //Chiều dài HCM tính là 21 star
+
+            //Nếu i (hàng) ở vị trí = 0 -> In star -> vẽ cạnh dài ở trên
+            //Nếu i (hàng) ở vị trí (index) = 6 -> In star -> vẽ cạnh dài ở dưới
+            //Nếu j (cột) ở vị trí = 0 -> In sao -> vẽ cạnh rộng bên trái
+            //Nếu j (cột) ở vị trí = 20 -> In sao -> vẽ cạnh rộng bên phải
+            //*******
+            //**
+            //**
+            //**
+            //*******
+            //Vẽ ra HCM như trên nhưng chưa đúng cần bổ sung thêm khoảng trắng
+            // if(i === 0){
+            //     document.write("*");
+            // }else if(i === 6){
+            //     document.write("*");
+            // }else if(j === 0){
+            //     document.write("*");
+            // }else if(j === 20){
+            //     document.write("*");
+            // }else {
+            //     document.write("&nbsp&nbsp");
+            // }
+
+            if (i === 0 || i === 6 || j === 0 || j === 20) {
+                document.write("*");
+            } else {
+                document.write("&nbsp&nbsp");
+            }
+        }
+          document.write("<br>");
+      }
+    }
+  </script>
+
+</body>
+</html>

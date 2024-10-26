@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button type="button" onclick="doLoop()" style="margin-top: 10px">Max</button>
+    <p id="result"></p>
+    
+    <script>
+    function doLoop() {
+      let number = [-4 , 38, 12, 50];
+      let numberMax = number[0];
+
+      for (let i = 0; i < number.length; i++) {
+        if(numberMax < number[i]) {
+          numberMax = number[i];
+        }
+      }
+      document.write(numberMax);
+    }
+    </script>
+</body>
+</html>
