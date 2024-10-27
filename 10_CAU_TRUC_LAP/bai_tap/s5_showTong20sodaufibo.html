@@ -7,28 +7,28 @@
 <body>
 <!--Bài 5: Tính tổng của 20 số đầu tiên trong dãy fibonacci.-->
 
-    <button type="button" onclick="doLoop()" style="margin-top: 10px">Thực thi vòng lặp</button>
+    <button type="button" onclick="doLoop()" style="margin-top: 10px">Tổng 20 số đầu Fibo</button>
 <!--    <p id="result"></p>-->
 
   <script>
     function doLoop(){
-      let fiboSum;
+      let fiboNext = 0;
       let fibo0 = 0;
       let fibo1 = 1;
       let count = 0;
-      let sumFibo;
+      let sumFibo = 0;
 
       while (count < 20){
-        //document.write(fibo0 + "<br>");
-        fiboSum = fibo0 + fibo1;
+        document.write(fibo0 + "<br>");
+        sumFibo = sumFibo + fibo0;
+        fiboNext = fibo0 + fibo1;
         fibo0 = fibo1;
-        fibo1 = fiboSum;
+        fibo1 = fiboNext;
 
         count++;
       }
-      //sumFibo = fiboSum;
-      sumFibo = sumFibo + fiboSum;
-      document.write(sumFibo);
+
+      document.write("Tổng 20 số đầu tiên trong Fibo: " + sumFibo);
     }
   </script>
 </body>
