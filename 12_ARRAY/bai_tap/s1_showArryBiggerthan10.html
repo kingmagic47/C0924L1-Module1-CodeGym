@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT1</title>
+</head>
+<body>
+<!--Bài 1- Viết chương trình khởi tạo mảng số nguyên gồm 10 phần tử. -->
+<!--Chương trình thực hiện tính và hiển thị xem có bao nhiêu số nguyên lớn hơn hoặc bằng 10.-->
+<button type="button" onclick="doLoop()">Show</button>
+
+<script>
+    function doLoop() {
+        let arrayNumber = new Array();
+        let arrayBig10 = [];
+        for (let i = 0; i < 10; i++) {
+            let number = parseInt(prompt("Nhập số nguyên thứ " + (i+1) + ":"));
+            arrayNumber.push(number);
+
+            //Kiểm tra số nếu >= 10 sẽ tăng biến đếm lên 1
+            if(number >= 10){
+                arrayBig10.push(number);
+            }
+        }
+        document.write("Dãy số nguyên đã nhập: " + arrayNumber + "<br>");
+        document.write("Dãy các số lớn hoặc bằng 10: " + arrayBig10);
+
+    }
+</script>
+</body>
+</html>

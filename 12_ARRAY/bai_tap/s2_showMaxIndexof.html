@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT2</title>
+</head>
+<body>
+<!--Bài 2- Viết chương trình khởi tạo mảng số nguyên gồm 10 phần tử khác nhau. -->
+<!--Chương trình hiển thị ra được phần tử có giá trị lớn nhất trong mảng và vị trí của phần tử đó.-->
+
+<button type="button" onclick="doLoop()">Show</button>
+
+<script>
+    function doLoop() {
+        let arrayNumber = new Array();
+        let dupNum = false;
+        //Nhập 10 số nguyên vào mảng
+        for (let i = 0; i < 10; i++) {
+            let number = parseInt(prompt("Nhập số nguyên thứ " + (i + 1) + ":"));
+            for (let j = 0; j < arrayNumber.length; j++) {
+                if (arrayNumber[j] === number) {
+                    dupNum = true;
+                    break;
+                }
+            }
+            if (dupNum) {
+                alert("Số vừa nhập bị trùng");
+            } else {
+                arrayNumber.push(number);
+                i++;
+            }
+        }
+
+        //Tìm số lớn nhất trong mảng
+        let maxNum = arrayNumber[0];
+        for (let j = 0; j < arrayNumber.length; j++) {
+            if (arrayNumber[j] > maxNum) {
+                maxNum = arrayNumber[j];
+            }
+        }
+        let position = arrayNumber.indexOf(maxNum);
+        document.write("Dãy số nguyên đã nhập: " + arrayNumber + "<br>");
+        document.write("Số lớn nhất: " + maxNum + "<br>");
+        document.write("Vị trí của phần tử là : " + position);
+
+        // let arrayNumber = new Array();
+        // let i = 0;
+        //
+        // while (i < 10 ){
+        //     let number = parseInt(prompt("Nhập số nguyên thứ " + (i+1) + ":"));
+        //     let exit = false;
+        //
+        //     if (number === "" || isNaN(number)) {
+        //         alert("Vui lòng nhập một số nguyên hợp lệ.");
+        //         continue; // Quay lại đầu vòng lặp và yêu cầu nhập lại
+        //     }
+        //
+        //     for (let j = 0; j < arrayNumber.length; j++) {
+        //         if(arrayNumber[j] === number){
+        //             exit = true;
+        //             break;
+        //         }
+        //     }
+        //     if(exit){
+        //         alert("Số này đã được nhập trước đó, hãy nhập lại");
+        //     }else {
+        //         arrayNumber.push(number);
+        //         i++;
+        //     }
+
+    }
+</script>
+</body>
+</html>
