@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT 3</title>
+</head>
+<body>
+<!--Bài 3- Viết chương trình khởi tạo mảng số nguyên. -->
+<!--Hiển hiện giá trị lớn nhất trong mảng đó. In ra giá trị trung bình của các phần tử trong mảng.-->
+
+<button type="button" onclick="doLoop()">Show</button>
+
+<script>
+    function doLoop() {
+        let arrayNumber = new Array();
+        for (let i = 0; i < 10; i++) {
+            let number = parseInt(prompt("Nhập sô nguyên thứ " + (i+1) + ":"));
+            arrayNumber.push(number);
+        }
+
+        let maxNum = arrayNumber[0];
+        for (let j = 0; j < arrayNumber.length; j++) {
+            if(arrayNumber[j] > maxNum){
+                maxNum = arrayNumber[j];
+            }
+        }
+
+        let sum = 0;
+        for (let k = 0; k < arrayNumber.length ; k++) {
+            sum = sum + arrayNumber[k];
+        }
+
+        let avrg = sum / arrayNumber.length;
+
+        document.write("Các giá trị trong mảng: " + arrayNumber + "<br>");
+        document.write("Giá trị lớn nhất trong mảng: " + maxNum + "<br>");
+        document.write("Giá trị trung bình của các số trong mảng: " + avrg);
+    }
+</script>
+
+</body>
+</html>

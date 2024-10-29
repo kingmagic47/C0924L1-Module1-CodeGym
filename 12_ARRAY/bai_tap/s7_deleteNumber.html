@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT7</title>
+</head>
+<body>
+<!--Bài 7- Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử, nhập/tạo phần tử số nguyên V. -->
+<!--Chương trình kiểm tra xem V có thuộc mảng đã cho không, nếu V thuộc mảng đã cho xoá V khỏi mảng -->
+<!--(Bản chất việc xoá ở đây tức là dịch phần tử ở bên phải V sang vị trí của V,
+và gán 0 cho phần tử cuối cùng của mảng)-->
+
+<button type="button" onclick="doLoop()">Show</button>
+
+<script>
+  function doLoop() {
+    let arrayNumber = [3, 6, 4, 9, 11, 12];
+    let numberV = parseInt(prompt('Nhập số phần tử nguyên V:'));
+
+    let index = -1;
+    for (let i = 0; i < arrayNumber.length; i++) {
+      if (numberV === arrayNumber[i]) {
+        for (let j = i; j < arrayNumber.length - 1; j++) {  //Nên duyệt mảng tới vị trí 11
+          arrayNumber[j] = arrayNumber[j + 1]; //Do i+1 duyệt tới 12 dẫn đến đằng sau ko có phần tử
+        }
+        arrayNumber[arrayNumber.length - 1] = 0;
+      }
+    }
+    alert(arrayNumber);
+  }
+</script>
+
+
+</body>
+</html>

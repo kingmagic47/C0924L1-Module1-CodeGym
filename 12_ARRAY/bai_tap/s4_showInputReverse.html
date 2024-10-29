@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT4</title>
+</head>
+<body>
+<!--Bài 4- Viết chương trình khởi tạo/nhập vào một mảng số nguyên và đảo ngược các phần tử trong mảng đó.-->
+
+<button type="button" onclick="doLoop()">Show</button>
+
+<script>
+  function doLoop() {
+    let arrayNumber = new Array();
+    for (let i = 0; i < 10; i++) {
+      let number = parseInt(prompt("Nhập sô nguyên thứ " + (i + 1) + ":"));
+      arrayNumber.push(number);
+    }
+
+    // let arrayNumop = [];
+    // let number1;
+    // for (let j = arrayNumber.length - 1; j >= 0; j--) {
+    //   number1 = arrayNumber[j];
+    //   arrayNumop.push(number1);
+    // }
+
+    document.write("Các giá trị trong mảng: " + arrayNumber + "<br>");
+    document.write("Đảo ngược các phần trong mảng: " + arrayNumber.reverse());
+
+  }
+</script>
+
+</body>
+</html>

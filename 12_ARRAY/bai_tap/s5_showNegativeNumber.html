@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT5</title>
+</head>
+<body>
+<!--Bài 5- Viết chương trình đếm số nguyên âm trong một chuỗi-->
+
+<button type="button" onclick="doLoop()">Show</button>
+
+<script>
+    function doLoop() {
+        let arrayNumber = new Array();
+        for (let i = 0; i < 10; i++) {
+            let number = parseInt(prompt("Nhập số nguyên thứ " + (i + 1) + ":"));
+            if (isNaN(number)) {
+                alert("không được để trống");
+                i--;
+                continue;
+            }
+            arrayNumber.push(number);
+        }
+
+        let count = 0;
+        let arrayNumNegative = [];
+        for (let j = 0; j < arrayNumber.length; j++) {
+            if (arrayNumber[j] < 0) {
+                count++;
+                arrayNumNegative.push(arrayNumber[j]);
+            }
+        }
+
+        document.write("Các giá trị trong mảng: " + arrayNumber + "<br>");
+        document.write("Số lượng các số nguyên âm: " + count + "<br>");
+        document.write("Các số nguyên âm trong mảng: " + arrayNumNegative);
+
+    }
+</script>
+</body>
+</html>
