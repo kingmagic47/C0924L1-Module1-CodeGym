@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT3</title>
+</head>
+<body>
+<!--Bài 3: Viết một chương trình khai báo một mảng ký tự và kích thước của mảng. -->
+<!--Chương trình này đếm số ký tự số trong mảng.-->
+
+<script>
+
+  let sizeArray = parseInt(prompt("Nhập kích thước của mảng: "));
+  let arrayWord = new Array(sizeArray);
+
+
+  for (let i = 0; i < arrayWord.length; i++) {
+    arrayWord[i] = prompt("Nhập ký tự của mảng: " + i);
+  }
+
+  let count = 0;
+  for (let j = 0; j < arrayWord.length ; j++) {
+    if(isNaN(arrayWord[j])){
+      count++;
+    }
+  }
+  alert("Hiển thị mảng nhập: " + arrayWord);
+  alert("Số lượng ký tự trong mảng: "+ count);
+
+
+</script>
+
+</body>
+</html>

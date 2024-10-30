@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT5</title>
+</head>
+<body>
+<!--Bài 5: Viết một chương trình nhập vào 2 chuỗi, sau đó kiểm tra xem hai chuỗi có giống nhau hay không.-->
+
+<script>
+    let stringA = 'you';
+    let stringB = 'youe';
+    let isMatch = true;
+
+    if(stringA.length !== stringB.length){
+        isMatch = false;
+    }else {
+        for (let i = 0; i < stringA.length; i++) {
+            if(stringA[i] !== stringB[i]){
+                isMatch = false;
+                break;
+            }
+        }
+    }
+
+    if(isMatch){
+        alert('Chuỗi trùng nhau');
+    }else {
+        alert('Chuỗi không trùng nhau');
+    }
+</script>
+</body>
+</html>
