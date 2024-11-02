@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT5</title>
+</head>
+<body>
+<button type="button" onclick="checkNameStar()">click me</button>
+
+<script>
+  // Mảng chứa tên các ngôi sao
+  let starNames = ['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe', 'Regulus'];
+
+  // Mảng chứa tên các chòm sao tương ứng
+  let constellationNames = ['Ursa Minor', 'Taurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major', 'Leo'];
+
+  function checkNameStar() {
+    let name = prompt("Nhập tên ngôi sao:").trim().toLowerCase();
+
+    let found = false;
+
+    for (let i = 0; i < starNames.length; i++) {
+      if (name === starNames[i].trim().toLowerCase()) {
+        document.write(constellationNames[i]);
+        found = true;
+        break;
+      }
+    }
+    if(!found){
+      alert("Không có tên ngôi sao trong danh sách");
+    }
+  }
+
+</script>
+
+</body>
+</html>

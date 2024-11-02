@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT3</title>
+</head>
+<body>
+<!--Bài 3: Tạo hàm nhận vào hai tham số. Nếu giá trị của tham số thứ nhất lớn hơn tham số thứ hai, -->
+<!--hiển thị hộp thoại thông báo cho người dùng. Nếu giá trị của tham số thứ nhất nhỏ hơn
+hoặc bằng tham số thứ hai, trả về tổng của hai tham số.-->
+<button type="button" onclick="checkNumber()">Click me</button>
+
+<script>
+    function checkNumber() {
+        while (true){
+            var num1 = parseInt(prompt('Nhập số thứ 1: '));
+            var num2 = parseInt(prompt('Nhập số thứ 2: '));
+            if (isNaN(num1) || isNaN(num2) ){
+                alert("Nhập lại giá trị số");
+            }else {
+                break;
+            }
+        }
+
+        let sum = num1 + num2;
+        if(num1 < num2){
+            alert("Số " + num1 + " nhỏ hơn " + "số " + num2);
+        }else if(num1 === num2){
+            alert("Số " + num1 + " bằng " + "số " + num2);
+        }else {
+            alert("Tổng giá trị 2 số: " + sum);
+            return sum;
+        }
+    }
+</script>
+
+</body>
+</html>
