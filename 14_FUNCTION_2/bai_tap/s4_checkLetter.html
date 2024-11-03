@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT4</title>
+</head>
+<body>
+<!--Bài 4: Viết hàm kiểm tra xem ký tự nhập vào có phải là ký tự số không. -->
+<!--Nếu là ký tự số hàm trả về true, ngược lại trả về false.-->
+
+<input id="letter" type="text">
+<button type="button" onclick="checkLetter()">Kiểm tra</button>
+
+<script>
+    function checkLetter() {
+        let letter = document.getElementById("letter").value;
+        let isMatch;
+
+        if(isNaN(letter)){
+            isMatch = false;
+        }else {
+            isMatch = true;
+        }
+        alert(isMatch);
+    }
+</script>
+
+
+</body>
+</html>

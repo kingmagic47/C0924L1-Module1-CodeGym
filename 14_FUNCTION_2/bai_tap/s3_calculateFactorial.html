@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT3</title>
+</head>
+<body>
+<!--Bài 3: Viết hàm tính giai thừa của một số nguyên bất kỳ được đưa vào. Gọi hàm vừa xây dựng được.-->
+<input id="number" type="text" placeholder="Nhập số nguyên">
+<button type="button" onclick="calculateFactorial()">Calculate Factorial </button><br>
+<p id="result"></p>
+<script>
+    function calculateFactorial() {
+        let number = parseInt(document.getElementById("number").value);
+        let result = document.getElementById("result");
+        let s = 1;
+
+        if(number === 0){
+            result.innerText = "Giai thừa của " + number + "!" + " là: 1";
+        }
+
+        for (let i = 1; i <= number; i++) {
+            s = s * i;
+        }
+        result.innerText = "Giai thừa của " + number + "!" + " là: " + s;
+    }
+</script>
+
+</body>
+</html>

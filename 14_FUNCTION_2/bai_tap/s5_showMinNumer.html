@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT5</title>
+</head>
+<body>
+<!--Bài 5: Viết hàm nhận vào 3 số nguyên bất kỳ, trả về số nguyên có giá trị nhỏ nhất.-->
+
+<button type="button" onclick="showMinNumber()">Click me</button>
+
+<script>
+  function showMinNumber() {
+    let num1 = parseInt(prompt("Nhập số thứ 1:"));
+    let num2 = parseInt(prompt("Nhập số thứ 2:"));
+    let num3 = parseInt(prompt("Nhập số thứ 3:"));
+
+    let minNum;
+    if (num1 < num2 && num1 < num3) {
+      minNum = num1;
+    } else if (num2 < num3) {
+      minNum = num2;
+    } else {
+      minNum = num3;
+    }
+
+    //let minNum = Math.min(num1, num2, num3);
+
+    alert("Giá trị nhỏ nhất: " + minNum);
+  }
+</script>
+</body>
+</html>

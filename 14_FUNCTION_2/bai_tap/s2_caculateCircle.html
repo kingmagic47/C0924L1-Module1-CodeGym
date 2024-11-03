@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BT2</title>
+</head>
+<body>
+<!--Bài 2: Viết hàm tính diện tích, hàm tính chu vi hình tròn. Gọi hàm vừa xây dựng được-->
+
+<h3>Tính diện tích và chu vi hình tròn</h3>
+<input id="radius" type="text" placeholder="Nhập bán kính">
+<button type="button" onclick="caculateCircle()">Caculate</button><br>
+<span>Diện tích hình tròn: </span><span id="resultS"></span><br>
+<span>Chu vi hình tròn: </span><span id="resultC"></span>
+
+<script>
+  function caculateCircle() {
+    let radius = parseFloat(document.getElementById("radius").value);
+    let resultS = document.getElementById("resultS");
+    let resultC = document.getElementById("resultC");
+    const pi = 3.1415;
+
+    let circumference = radius * 2 * pi;
+    let area = radius * radius * pi ;
+
+    resultS.innerText = area;
+    resultC.innerText = circumference;
+  }
+</script>
+
+</body>
+</html>
