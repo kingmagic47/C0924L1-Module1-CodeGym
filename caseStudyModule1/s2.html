@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Case2</title>
+</head>
+<body>
+
+<script>
+  let canhA = +prompt("Nhập độ dài cạnh A");
+  let canhB = +prompt("Nhập độ dài cạnh B");
+  let canhC = +prompt("Nhập độ dài cạnh C");
+
+  //gọi hàm và trả kết quả
+  alert(`${checkTriangle(canhA, canhB, canhC)}`);
+
+  function checkTriangle(a, b, c) {
+    if (
+            a % 1 !== 0 ||
+            b % 1 !== 0 ||
+            c % 1 !== 0 ||
+            a <= 0 ||
+            b <= 0 ||
+            c <= 0
+    ) {
+      return `Giá trị nhập vào chưa hợp lệ. Vui lòng nhập lại`;
+    }
+
+    let max = Math.max(a, b, c); // tìm cạnh lớn nhất (cạnh huyền)
+    if (a < b + c && b < a + c && c < a + b) {
+      if (max ** 2 === a ** 2 + b ** 2 + c ** 2 - max ** 2) {
+        return `Là cạnh của một tam giác vuông`;
+      }
+      return `Chỉ là 3 cạnh của một tam giác`;
+    }
+    return `Không phải là cạnh của một tam giác`;
+  }
+</script>
+
+</body>
+</html>

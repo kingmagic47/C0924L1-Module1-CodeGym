@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Case3</title>
+</head>
+<body>
+<script>
+  let n;
+  do {
+    n = prompt(`Nhập độ dài của mảng`);
+  } while (n <= 0 || n % 1 !== 0 || n < 3);
+
+  let array = [];
+  for (let i = 0; i < n; i++) {
+    array.push(+prompt(`Nhập phần tử thứ ${i + 1}`));
+  }
+
+  //hiển thị mảng
+  alert(`Mảng vừa nhập vào là: ${array}`);
+
+  //kiểm tra mảng
+  let count = 0;
+  for (let i = 0; i < Math.floor(n / 2); i++) {
+    if (array[i] === array[n - (i + 1)]) {
+      count++;
+    }
+  }
+
+  if (count === Math.floor(n / 2)) {
+    alert(`OK: Mảng đối xứng`);
+  } else {
+    alert(`NO: Mảng không đối xứng`);
+  }
+</script>
+</body>
+</html>

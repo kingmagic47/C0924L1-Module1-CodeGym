@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Case5</title>
+</head>
+<body>
+<script>
+  let number1 = 923;
+  let number2 = 1923;
+  let number3 = 9371;
+
+
+  //gọi hàm kiểm tra
+  document.write(`${findMaxNumber(number1)} <br>`);
+  document.write(`${findMaxNumber(number2)} <br>`);
+  document.write(`${findMaxNumber(number3)} <br>`);
+  document.write(`${findMaxNumber(number4)} <br>`);
+
+  function findMaxNumber(number) {
+    let numberString = number.toString();
+
+    if (numberString.length !== 4 || isNaN(number)) {
+      return `-1`;
+    }
+
+    let max = 0;
+
+    for (let element of numberString) {
+      let newString = Number(numberString.split(element).join(""));
+      if (newString > max) {
+        max = newString;
+      }
+    }
+    return `Số lớn nhất có 3 chữ số là: ${max} `;
+  }
+</script>
+</body>
+</html>

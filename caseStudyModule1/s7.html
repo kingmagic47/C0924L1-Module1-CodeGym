@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Case7</title>
+</head>
+<body>
+<script>
+  let array1 = [1, 2, 3, 6, 7];
+  let array2 = ["a", "b", "r", "e"];
+  let array3 = [1, "a","b", 4];
+
+  //gọi hàm kiểm tra
+  document.write(`Kết quả kiểm tra: ${checkArray(array1)}  <br>`);
+  document.write(`Mảng thứ 1: ` + array1);
+  document.write(`<br>Kết quả kiểm tra: ${checkArray(array2)}  <br>`);
+  document.write(`Mảng thứ 2: ` + array2);
+  document.write(`<br>Kết quả kiểm tra: ${checkArray(array3)}  <br>`);
+  document.write(`Mảng thứ 3: ` + array3);
+
+  function checkArray(array) {
+    let countNum = 0;
+    let countString = 0;
+
+    for (let i = 0; i < array.length; i++) {
+      if (isNaN(array[i])) {
+        countString++;
+      } else {
+        countNum++;
+      }
+    }
+
+    if (array.length === countString) {
+      return 0;
+    } else if (array.length === countNum) {
+      return 1;
+    } else {
+      return -1;
+    }
+  }
+</script>
+
+</body>
+</html>

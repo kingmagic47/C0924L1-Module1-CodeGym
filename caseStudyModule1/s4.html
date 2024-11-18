@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Case4</title>
+</head>
+<body>
+<script>
+  let string1 = prompt("Nhập chuỗi bất kỳ để kiểm tra");
+  //gọi hàm:
+  alert(find(string1));
+
+  function find(chuoi) {
+    // if (!chuoi.includes("/")) {
+    //   return `Chuỗi vừa nhập: ${chuoi} không phải là phân số`;
+    // }
+    if (chuoi.indexOf("/") === -1) {
+      return "Chuỗi vừa nhập: " + chuoi + " không phải là phân số";
+    }
+
+    let array = chuoi.split("/");
+    if (array.length !== 2) {
+      return `Chuỗi vừa nhập: ${chuoi} không phải là phân số`;
+    }
+
+    let tuSo = parseInt(array[0]);
+    let mauSo = parseInt(array[1]);
+    //kiểm tra tử và mẫu phải là số nguyên
+    if (tuSo % 1 !== 0 || mauSo % 1 !== 0) {
+      return `Chuỗi vừa nhập: ${chuoi} không phải là phân số`;
+    }
+
+    //kiểm tra mẫu số phải !0
+    if (mauSo === 0) {
+      return `Chuỗi vừa nhập: ${chuoi} không phải là phân số`;
+    }
+
+    //tìm ước chung lớn nhất
+    let uoc = 1;
+    let min = Math.min(tuSo, mauSo); //so sánh tử số và mẫu số tìm ra giá trị nhỏ nhất
+
+    if (min >= 0) {
+      for (let i = min; i >= 1; i--) {
+        if ((tuSo % i === 0) && (mauSo % i === 0)) {
+          uoc = i;
+          break;
+        }
+      }
+    } else if (min < 0) {
+      for (let i = min; i <= 1; i++) {
+        if ((tuSo % i === 0) && (mauSo % i === 0)) {
+          uoc = Math.abs(i); // chuyển về trị tuyệt đối để khi chia tử hoặc mẫu cho ước về đúng định dạng -a/b
+          break;
+        }
+      }
+    }
+
+    //rút gọn tử và mẫu
+    tuSo /= uoc;
+    mauSo /= uoc;
+
+    //trả kết quả
+    //return "Phân số tối giản là: " + tuSo + "/" + mauSo;
+    if (tuSo === 0 || mauSo === 1) {
+     return "Phân số tối giản là: " + tuSo + "/" + mauSo;
+      //return `Phân số tối giản là ${tuSo / mauSo} `;
+    } else {
+      return "Phân số tối giản là: " + tuSo + "/" + mauSo;
+      //return `Phân số tối giản là: ${tuSo / uoc} / ${mauSo / uoc}`;
+    }
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Case10</title>
+</head>
+<body>
+<script>
+  function checkString(str) {
+    //khai báo mảng nguyên âm
+    let array = ["e", "o", "a"];
+    let arrayOutput = [];
+    str = str.toLowerCase();
+
+    for (let i = 0; i < str.length; i++) {
+      if (array.includes(str[i]) && !arrayOutput.includes(str[i])) {
+        arrayOutput.push(str[i]);
+      }
+    }
+
+    document.write(arrayOutput + "<br>");
+  }
+
+  //tham số bất kỳ
+  let str1 = "hello";
+  let str2 = "CodeGym DaNang A";
+
+  //gọi hàm
+  checkString(str1);
+  checkString(str2);
+</script>
+</body>
+</html>
