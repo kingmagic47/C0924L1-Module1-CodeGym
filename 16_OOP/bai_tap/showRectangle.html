@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hình chữ nhật</title>
+</head>
+<body>
+
+<canvas id="hinhChuNhat"></canvas>
+
+<script>
+
+    class Rectangle {
+        constructor(chieuDai, chieuRong) {
+            this.chieuDai = chieuDai;
+            this.chieuRong = chieuRong;
+        }
+
+        getDienTich() {
+            return this.chieuDai * this.chieuRong;
+        }
+
+        getChuVi() {
+            return (this.chieuDai + this.chieuRong) * 2;
+        }
+
+
+        draw(canvasId) {
+            const canvas = document.getElementById(canvasId);
+            const ctx = canvas.getContext("2d");
+            ctx.rect(10, 10, this.chieuDai, this.chieuRong);
+            ctx.strokeStyle = "black";
+            ctx.lineWidth = 5;
+            ctx.stroke();
+            ctx.fillStyle = "green";
+            ctx.fill();
+        }
+    }
+
+    //khai báo, khởi tạo
+    let hinhChuNhat = new Rectangle(100, 50);
+
+    //hiển thị hình chữ nhật trên màn hình web
+    hinhChuNhat.draw("hinhChuNhat");
+
+    //thay đổi chiều dài và chiều rộng
+    hinhChuNhat.chieuDai = 200;
+    hinhChuNhat.chieuRong = 100;
+
+    //hiển thị diện tích và chu vi hình chữ nhật
+    document.write(`<br>Diện tích hình chữ nhật là: ${hinhChuNhat.getDienTich()} <br>`);
+    document.write(`Chu vi hình chữ nhật là: ${hinhChuNhat.getChuVi()}`);
+
+
+
+    // let Rectangle = function (width, length) {
+    //     this.width = width;
+    //     this.length = length;
+    //
+    //     this.getLength = function () {
+    //         return length;
+    //     }
+    //     this.getWidth = function () {
+    //         return width;
+    //     }
+    //     this.getArea = function () {
+    //         return width * length;
+    //     }
+    // }
+    //
+    // let rectangle = new Rectangle(4,5);
+    // let width = rectangle.getWidth();
+    // let length = rectangle.getWidth();
+
+
+</script>
+</body>
+</html>

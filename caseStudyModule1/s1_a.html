@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Bài 1: Nhập 1 mảng từ bàn phím với độ dài n (n <=20)-->
+<!--        Hiển thị mảng sau khi thêm mới các phần tử-->
+<!--        Kiểm tra mảng vừa nhập-->
+<!--        Nếu mảng tăng dần đều thì hiện OK, không phải trả về NO-->
+<!--<button type="button" onclick="showArray()">Show</button>-->
+
+<script>
+    // function showArray() {
+    //
+    //     let array = new Array();
+    //     let n = Number(prompt("Nhập độ dài của mảng:"));
+    //
+    //     if (n > 20 || isNaN(n) || n <= 0) {
+    //         alert("Nhập lại độ dài mảng <=20 và nhập số nguyên > 0");
+    //         return;
+    //     }
+    //     for (let i = 0; i < n; i++) {
+    //         let number = parseInt(prompt("Nhập số thứ " + (i + 1) + " : "));
+    //         array.push(number);
+    //     }
+    //
+    //
+    //     document.write(" Các giá trị trong mảng: " + array);
+    // }
+
+    let n;
+    do{
+        n = prompt("Nhập độ dài mảng:");
+    }while (n > 20 || isNaN(n) || n <= 0 || n % 1 != 0); //n % 1 != 0
+    //alert(n);
+
+    let array = [];
+    for (let i = 0; i < n; i++) {
+        let number = Number(prompt("Nhập phần tử thứ " + (i+1))); //i+1 do i chạy từ i=0
+        array.push(number);
+    }
+    alert("Mảng vừa nhập: " + array); // Xuất mảng vừa nhập
+
+    let diff = array[1] - array[0]; //giá trị lệch 2 số
+    if(diff <= 0 || array.length < 3){//diff <= 0 để thiết lập trong mảng tăng dần đều
+        alert("Mảng không phù hợp");
+    }else {
+        let isMatch = true;
+        for (let i = 0; i < array.length; i++) {
+            //phần tử mảng thứ (i+1) - i mà khác diff tương đương ko phải mảng tăng dần đều
+            if(array[i+1] - array[i]!== diff){
+                isMatch = false;
+                break;
+            }
+        }
+        //
+        if(isMatch){
+            alert("OK");
+        }else {
+            alert("NO");
+        }
+        //Hiển thị lại để xem lại mảng đã nhập
+        alert("Mảng đã nhập: " + array);
+    }
+
+</script>
+</body>
+</html>

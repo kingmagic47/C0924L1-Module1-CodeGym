@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ProducManagement</title>
+</head>
+<body>
+<h1>ỨNG DỤNG QUẢN LÝ SẢN PHẨM</h1>
+
+<input id="code" placeholder="Nhập mã sản phẩm"/>
+<input id="name" placeholder="Nhập tên sản phẩm"/>
+<input id="price" placeholder="Nhập giá sản phẩm"/>
+<button onclick="addProduct()">Nhập</button>
+
+<p>
+  <span>Tổng số lượng sản phẩm là:</span>
+  <b style="color: black"><span id="count"></span></b>
+</p>
+
+<p id="count"></p>
+<p id="table"></p>
+<script>
+  class Product {
+    //thuộc tính
+    constructor(code, name, price) {
+      this.code = code;
+      this.name = name;
+      this.price = price;
+    }
+
+    //phương thức
+  }
+
+  //tạo mảng từ class
+  let product1 = new Product("IP-001", "Iphone", 3000);
+  let product2 = new Product("VV-002", "Vivo", 1000);
+  let product3 = new Product("Xi-003", "Xiaomi", 500);
+  let productList = [product1, product2, product3];
+
+  //tạo bảng TableString
+  function showTable() {
+    let tableString = `<table border="1" style="text-align: center">
+      <tr>
+        <th>STT</th>
+        <th>Mã sản phẩm</th>
+        <th>Tên sản phẩm</th>
+        <th>Giá thành</th>
+        <th>Thao tác 1</th>
+        <th>Thao tác 2</th>
+      </tr>`;
+
+    for (let i = 0; i < productList.length; i++) {
+      tableString += `<tr>
+        <td>${i + 1}</td>
+        <td>${productList[i].code}</td>
+        <td>${productList[i].name}</td>
+        <td>${productList[i].price}</td>
+        <td><button onclick = "editProduct(${i})">Chỉnh sửa</button></td>
+        <td><button onclick = "deleteProduct(${i})">Xóa</button></td>
+      </tr>`;
+    }
+    tableString += `</table>`;
+    document.getElementById("table").innerHTML = tableString;
+    document.getElementById("count").innerHTML = productList.length;
+  }
+
+  showTable();
+
+  //thêm sản phẩm
+  function addProduct() {
+    let newCode = document.getElementById("code").value;
+    let newName = document.getElementById("name").value;
+    let newPrice = document.getElementById("price").value;
+
+    if (newCode != "" && newName != "" && newPrice != "") {
+      let newProduct = new Product(newCode, newName, newPrice);
+      productList.push(newProduct);
+    } else {
+      alert("Mời nhập thông tin");
+    }
+    document.getElementById("code").value = "";
+    document.getElementById("name").value = "";
+    document.getElementById("price").value = "";
+    showTable();
+  }
+
+  //edit sản phẩm
+  function editProduct(index) {
+    let editCode = prompt("Mời nhập mã sản phẩm mới");
+    let editName = prompt("Mời nhập tên sản phẩm mới");
+    let editPrice = prompt("Mời nhập giá sản phẩm mới");
+    productList[index] = new Product(editCode, editName, editPrice);
+    showTable();
+  }
+
+  //delete sản phẩm
+  function deleteProduct(index) {
+    let xacNhan = confirm(
+            `Bạn có chắc muốn xóa sản phẩm ${productList[index].name} chứ???`
+    );
+
+    if (xacNhan) {
+      productList.splice(index, 1);
+      showTable();
+    }
+  }
+</script>
+
+</body>
+</html>

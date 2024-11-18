@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Temperature</title>
+</head>
+<body>
+
+<script>
+  class Temperature {
+    //thuộc tính
+    constructor(doC) {
+      this.doC = doC;
+    }
+
+    //phương thức
+    getTinhDoF() {
+      return (this.doC * 9) / 5 + 32;
+    }
+
+    getTinhDoK() {
+      return this.doC + 273.15;
+    }
+  }
+
+  //khởi tạo, gán giá trị
+  let doC = new Temperature(25);
+
+  //in ra màn hình độ F và độ K tương ứng
+  document.write(`Độ F tương ứng là: ${doC.getTinhDoF()} <br> Độ K tương ứng là: ${doC.getTinhDoK()} `
+  );
+
+</script>
+
+</body>
+</html>

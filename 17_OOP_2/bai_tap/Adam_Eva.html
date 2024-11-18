@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Adam_Eva</title>
+</head>
+<body>
+<h1> ADAM and EVA</h1>
+<script>
+
+
+    class Apple {
+        constructor(weight) {
+            this.weight = 10; //mặc định 10đv
+        }
+    }
+
+    //xây dựng lớp Human
+    class Human {
+        constructor(name, gender, weight) {
+            this.name = name;
+            this.gender = gender;
+            this.weight = weight;
+        }
+
+        getInfoHuman() {
+            return `Thông tin nhân vật: ${this.name}, ${this.gender}, ${this.weight} kg `;
+        }
+
+        eatApple(apple) {
+            if (apple.weight > 0) {
+                this.weight++;
+                apple.weight--;
+                return `${this.name} đã ăn 1 miếng táo và có cân nặng là ${this.weight} kg.`;
+            }
+        }
+
+        checkAppleWeight(apple) {
+            return `${this.name} kiểm tra khối lượng quả táo hiện tại là: ${apple.weight} đv.`;
+        }
+
+        speak(apple) {
+            if (apple.weight > 0) {
+                return `${this.name} nói là quả táo ăn ngon quá!`;
+            } else {
+                return `${this.name} nói đã ăn hết quả táo!`;
+            }
+        }
+    }
+
+    //khởi tạo đối tượng: 2 human và 1 trái táo
+    let human1 = new Human("Adam", "male", 65);
+    let human2 = new Human("Eva", "female", 45);
+    const apple1 = new Apple();
+
+    //viết câu chuyện
+
+    document.write(
+        `Khối lượng quả táo ban đầu là: ${apple1.weight} đv <br>`
+    );
+
+    document.write(`${human1.getInfoHuman()} <br>`);
+    document.write(`${human2.getInfoHuman()} <br> <br>`);
+
+    //vòng lặp
+
+    for (let i = 0; i < 11; i++) {
+        if (apple1.weight > 0) {
+            if (i % 2 === 0) {
+                document.write(`<b> Lần thứ ${i + 1} </b>  <br>`);
+                document.write(`${human1.eatApple(apple1)} <br>`);
+                document.write(`${human1.checkAppleWeight(apple1)} <br>`);
+                document.write(`${human1.speak(apple1)} <br>`);
+            } else {
+                document.write(`<b> Lần thứ ${i + 1} </b>  <br>`);
+                document.write(`${human2.eatApple(apple1)} <br>`);
+                document.write(`${human2.checkAppleWeight(apple1)} <br>`);
+                document.write(`${human2.speak(apple1)} <br>`);
+            }
+        }
+    }
+</script>
+</body>
+</html>
