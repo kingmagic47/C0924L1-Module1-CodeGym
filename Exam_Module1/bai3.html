@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Câu 3</title>
+</head>
+<body>
+<script>
+  let validInput = false;
+  let month, year;
+  while (!validInput) {
+  // Yêu cầu người dùng nhập tháng và năm với định dạng MM/yyyy
+    let input = prompt("Nhập tháng và năm theo định dạng MM/yyyy:");
+    if (dateFormat(input)) {
+      let parts = input.split('/');
+      month = parseInt(parts[0]);
+      year = parseInt(parts[1]);
+      if (!isNaN(month) && !isNaN(year)) {
+          validInput = true;
+      } else {
+        alert("Tháng hoặc năm không hợp lệ. Vui lòng nhập lại.");
+      }
+    } else {
+      alert("Định dạng nhập vào không hợp lệ. Vui lòng nhập lại.");
+    }
+  }
+
+  // Kiểm tra định dạng MM/yyyy
+  function dateFormat(dateStr) {
+    let regex = /^(0[1-9]|1[0-2])\/\d{4}$/;
+    return regex.test(dateStr);
+  }
+
+  //Lấy ngày trong tháng
+  function getDayInMonth(month, year) {
+    let daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+    if (month === 2 && leapYear(year)) {
+      return 29;
+    } else {
+      return daysInMonth[month - 1];
+    }
+  }
+
+  function leapYear(year) {
+    if (year % 100 === 0 && year % 400 === 0) {
+      return true;// Năm chia hết đồng thời cho 100 và 400 là năm nhuận
+    } else if (year % 100 === 0 && year % 400 !== 0) {
+      return false; // Năm chia hết cho 100 mà không chia hết cho 400 thì KHÔNG PHẢI là năm nhuận
+    } else if (year % 4 === 0 && year % 100 !== 0) {
+      return true; // Năm chia hết cho 4 mà không chia hết cho 100 là năm nhuận
+    } else {
+      return false; // Những năm còn lại không phải là năm nhuận
+    }
+  }
+
+  let day = getDayInMonth(month, year);
+  document.write(`Tháng ` + month + ` năm ` + year + ` có ` + day + ` ngày.` + `<br>`);
+  document.write(`Năm ` + year + ` là năm nhuận`);
+
+</script>
+</body>
+</html>

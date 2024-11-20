@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Câu 1</title>
+</head>
+<body>
+<script>
+    // Thêm phần tử vào mảng
+    let array = [];
+    for (let i = 0; i < 50; i++) {
+        let num = prompt("Nhập phần tử thứ " + (i + 1) + " (hoặc nhập 'stop' để dừng):");
+        if (num.toLowerCase() === 'stop'){
+            break;
+        }
+        num = parseInt(num);
+        if (!isNaN(num)){
+            array.push(num);
+        }
+    }
+
+    // Hiển thị mảng
+    document.write("Mảng đã nhập: " + array + "<br>");
+
+    // Kiểm tra số phần tử không vượt quá 50
+    if (array.length > 50) {
+        document.write("Mảng vượt quá 50 phần tử!<br>");
+    } else {
+        // Tính trung bình cộng các số chia hết cho 3
+        let sum = 0, count = 0;
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] % 3 === 0) {
+                sum += array[i];
+                count++;
+            }
+        }
+        if (count > 0) {
+            let average = sum / count;
+            document.write("Trung bình cộng các số chia hết cho 3: " + average);
+        } else {
+            document.write("Không có số nào chia hết cho 3 trong mảng.");
+        }
+    }
+
+</script>
+</body>
+</html>

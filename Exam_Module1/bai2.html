@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Câu 2</title>
+</head>
+<body>
+
+<script>
+    // Nhập số nguyên dương từ người dùng
+    let number = parseInt(prompt("Nhập vào một số nguyên dương:"));
+
+    function perfectNumber(n) {
+        // Kiểm tra điều kiện đầu vào
+        if (n <= 1) {
+            return false;
+        }
+        let sum = 0;
+        // Tính tổng các ước của n
+        for (let i = 1; i < n; i++) {
+            if (n % i === 0) {
+                sum += i;
+            }
+        }
+        // Kiểm tra nếu tổng các ước bằng chính số đó
+        return sum === n;
+    }
+
+    // Kiểm tra tính hợp lệ của số nguyên dương và in kết quả
+    if (!isNaN(number) && number > 0) {
+        if (perfectNumber(number)) {
+            document.write(number + " là số hoàn hảo: True");
+        } else {
+            document.write(number + " không phải là số hoàn hảo: False");
+        }
+    } else {
+        document.write("Vui lòng nhập một số nguyên dương hợp lệ.");
+    }
+
+</script>
+</body>
+</html>
