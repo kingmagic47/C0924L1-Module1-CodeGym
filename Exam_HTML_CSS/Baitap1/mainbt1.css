@@ -1,29 +1,31 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
     font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
     text-align: center;
+    margin: 0;
+    padding: 0;
 }
 
 .container {
-    width: 90%;
-    margin: 20px auto;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+h2 {
+    color: #333;
 }
 
 h4 {
     margin-top: 20px;
+    color: #555;
 }
 
-/* Gallery chung */
 .gallery {
-    display: none; /* Mặc định ẩn */
-    gap: 10px;
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    margin-top: 10px;
+    gap: 10px;
 }
 
 .gallery img {
@@ -34,37 +36,51 @@ h4 {
     padding: 5px;
 }
 
-/* Hiển thị theo từng kích thước màn hình */
-/* Lớn hơn 1200px: 4 ảnh trên 1 hàng */
+.image {
+    text-align: center;
+}
+
+.image img {
+    width: 100%;
+    max-width: 300px;
+    height: 200px; /* Đặt chiều cao cố định để các hình có cùng chiều cao */
+    object-fit: cover; /* Đảm bảo hình ảnh được cắt đều nhau */
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.image p {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #666;
+}
+
+.large-screen, .medium-screen, .small-screen {
+    display: none;
+}
+
 @media (min-width: 1200px) {
-    .gallery.large {
+    .large-screen {
         display: flex;
-        flex-wrap: wrap;
+        justify-content: space-between;
     }
-    .gallery.large img {
-        width: calc(25% - 10px); /* 4 ảnh mỗi hàng */
+    .large-screen .image {
+        flex: 0 1 calc(25% - 10px);
     }
 }
 
-/* Từ 900px - 1200px: 2 ảnh mỗi hàng */
-@media (min-width: 900px) and (max-width: 1199px) {
-    .gallery.medium {
+@media (min-width: 900px) and (max-width: 1200px) {
+    .medium-screen {
         display: flex;
-        flex-wrap: wrap;
     }
-    .gallery.medium img {
-        width: calc(50% - 10px); /* 2 ảnh mỗi hàng */
+    .medium-screen .image {
+        flex: 0 1 45%; /* Đảm bảo hiển thị đẹp cho khoảng 900px - 1200px */
     }
 }
 
-/* Nhỏ hơn 900px: 1 ảnh mỗi hàng */
-@media (max-width: 899px) {
-    .gallery.small {
+@media (max-width: 900px) {
+    .small-screen {
         display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    .gallery.small img {
-        width: 80%;
+        flex-direction: column;
     }
 }
