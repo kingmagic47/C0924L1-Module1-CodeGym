@@ -1,0 +1,62 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+.login-container {
+    width: 300px;
+    margin: 100px auto;
+    padding: 20px;
+    border: 1px solid #000;
+    text-align: center;
+}
+input, button {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background: #ddd;
+}
+nav {
+    background: #ccc;
+    padding: 10px;
+}
+button {
+    padding: 10px;
+    border: none;
+    background: #666;
+    color: white;
+}
+.container {
+    display: flex;
+}
+.sidebar {
+    width: 20%;
+    background: #eee;
+    padding: 20px;
+}
+.content {
+    width: 80%;
+    padding: 20px;
+}
+.admin-header {
+    background: #aaa;
+    padding: 20px;
+}
+.admin-container {
+    display: flex;
+}
+.admin-sidebar {
+    width: 20%;
+    background: #ccc;
+    padding: 20px;
+}
+.admin-content {
+    width: 80%;
+    padding: 20px;
+}
